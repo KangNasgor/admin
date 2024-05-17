@@ -62,7 +62,10 @@
         </div>
         <div class="box justify-content-evenly">
             <label class="form weight-bold col-4">Role</label>
-            <input type="radio" class="border border-secondary rounded-1 col-6" name="role" placeholder="Role" required>
+            <select type="radio" class="border border-secondary rounded-1 col-6" name="role" placeholder="Role" required>
+                <option value="admin">Admin</option>
+                <option value="impostor">Impostor</option>
+            </select>
         </div>
         <div class="button">
             <button type="submit" class="btn btn-primary">Register</button>

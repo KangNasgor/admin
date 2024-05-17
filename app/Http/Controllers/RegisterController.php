@@ -14,6 +14,7 @@ class RegisterController extends Controller
         Users::create([
             'name' => $request->input('name'),
             'password' => $request->input('password'),
+            'role' => $request->input('role'),
         ]);
         return redirect()->route('login');
     }
