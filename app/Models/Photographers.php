@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Customers extends Model
+class Photographers extends Authenticatable
 {
     use HasFactory;
 
@@ -17,34 +17,25 @@ class Customers extends Model
      *
      * @var array<int, string>
      */
-    public function bookings()
+    public function getIsAdminAttribute()
     {
-        return $this->hasMany(Bookings::class, 'customer_id');
+        return $this->attributes['role'] === 'admin';
     }
-    public function photography_sessions()
+    public function photographySessions()
     {
-        return $this->hasMany(Photography_sessions::class, 'customer_id');
+        return $this->hasMany(Photography_sessions::class, 'photographer_id');
     }
     protected $fillable = [
-        'id',
         'name',
-        'email',
         'phone',
-        'updated_at',
-        'created_at',
-        'status_aktif',
+        'email',
     ];
-    protected $table = 'customers';
     protected $primaryKey = 'id';
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -55,7 +46,6 @@ class Customers extends Model
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
         ];
     }
 }

@@ -48,15 +48,13 @@
             <a href="{{ url('customers') }}" class="nav-link">Customers</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Help
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-              <a class="dropdown-item" href="#">FAQ</a>
-              <a class="dropdown-item" href="#">Support</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Contact</a>
-            </div>
+            <a href="{{ url('photographers') }}" class="nav-link">Photographers</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{ url('photography_sessions') }}" class="nav-link">Sessions</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{ url('bookings') }}" class="nav-link">Bookings</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
             <a href="/logout" class="nav-link">Logout</a>
